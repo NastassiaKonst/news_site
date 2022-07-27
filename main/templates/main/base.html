@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+  <head>
+    <title>Новости</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'main/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'main/fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/aos.css' %}">
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link href="{% static 'main/images/favicon.png' %}" rel="icon">
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    {% block header %}
+    {% endblock %}
+
+
+    <div class="site-section">
+      <div class="container">
+
+        {% block page_name %}
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+
+        {% block pagination %}
+        {% endblock %}
+
+      </div>
+    </div>
+
+    {% block footer %}
+    {% endblock %}
+
+  </div>
+
+  <script src="{% static 'main/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery-ui.js' %}"></script>
+  <script src="{% static 'main/js/popper.min.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'main/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'main/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'main/js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'main/js/aos.js' %}"></script>
+
+  <script src="{% static 'main/js/main.js' %}"></script>
+
+
+  </body>
+</html>

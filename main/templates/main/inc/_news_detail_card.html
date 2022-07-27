@@ -1,0 +1,45 @@
+    {% if news.photo %}
+    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{ news.photo.url }}')">
+    {% endif %}
+    {% if news.photo_url %}
+    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{ news.photo_url }}')">
+    {% endif %}
+      <div class="container">
+        <div class="row same-height justify-content-center">
+          <div class="col-md-12 col-lg-10">
+            <div class="post-entry text-center">
+              <span class="post-category text-white bg-success mb-3">{{ news.category }}</span>
+              <h1 class="mb-4"><a href="#">{{ news.header }}</a></h1>
+              <div class="post-meta align-items-center text-center">
+                <span class="d-inline-block mt-1">{{ news.author }}</span>
+                <span>&nbsp;-&nbsp;{{ news.date }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="site-section py-lg">
+      <div class="container">
+
+        <div class="row blog-entries element-animate">
+
+          <div class="col-md-12 col-lg-8 main-content">
+
+            <div class="post-content-body">
+              <p>{{ news.text|safe }}</p>
+          </div>
+
+          <!-- END main-content -->
+
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </div>
+

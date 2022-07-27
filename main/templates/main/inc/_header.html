@@ -1,0 +1,45 @@
+{% load categories_tags %}
+<header class="site-navbar" role="banner">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+
+      <div class="col-12 search-form-wrap js-search-form">
+        <form method="get" action="#">
+          <input type="text" id="s" class="form-control" placeholder="Search...">
+          <button class="search-btn" type="submit"><span class="icon-search"></span></button>
+        </form>
+      </div>
+
+      <div class="col-3 site-logo">
+        <a href="{% url 'home_page' %}" class="text-black h2 mb-0">Новости</a>
+      </div>
+
+      <div class="col-9 text-right">
+        <nav class="site-navigation" role="navigation">
+          <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
+            <li><a href="{% url 'home_page' %}">Главная</a></li>
+            {% get_categories as categories %}
+            {% for el in categories %}
+            <li><a href="{{ el.get_absolute_url }}">{{ el.category_name }}</a></li>
+            {% endfor %}
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'parse' %}">Парсить новости</a></li>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'logout' %}">Выход</a></li>
+            {% else %}
+              <li><a href="{% url 'login' %}">Войти</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+        <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span class="icon-menu h3"></span></a></div>
+      </div>
+
+      <form class="d-flex" action="{% url 'search' %}" method="get">
+        <input type="text" class="form-control rounded" placeholder="Поиск новостей" name="search">
+        <button class="btn btn-light my-2 my-sm-0" type="submit">Найти</button>
+      </form>
+  </div>
+
+</header>

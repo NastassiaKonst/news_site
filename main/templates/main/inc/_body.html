@@ -1,0 +1,18 @@
+{% load static %}
+<div class="row">
+    {% for el in news %}
+    <div class="col-lg-4 mb-4">
+        <div class="entry2">
+            {% if el.photo %}
+                <a href="{{ el.get_absolute_url }}"><img src="{{ el.photo.url }}" alt="Image" class="img-fluid rounded"></a>
+            {% endif %}
+            {% if el.photo_url %}
+                <a href="{{ el.get_absolute_url }}"><img src="{{ el.photo_url }}" alt="Image" class="img-fluid rounded"></a>
+            {% endif %}
+            <div class="excerpt"><span class="post-category text-white bg-secondary mb-3">{{ el.category }}</span><h2><a href="{{ el.get_absolute_url }}">{{ el.header }}</a></h2><div class="post-meta align-items-center text-left clearfix"><span class="d-inline-block mt-1">By <a href="#">{{ el.author.name }}</a></span><span>&nbsp;-&nbsp; {{ el.date }}</span>
+            </div><p>{{ el.annotation }}</p><p><a href="{{ el.get_absolute_url }}">Читать далее</a></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

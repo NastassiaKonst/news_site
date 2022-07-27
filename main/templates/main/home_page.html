@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block header %}
+  {% include 'main/inc/_header.html' %}
+{% endblock %}
+
+{% block page_name %}
+  <div class="row mb-5">
+    <div class="col-12">
+        <h2>Все новости</h2>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body %}
+  {% include 'main/inc/_body.html' %}
+{% endblock %}
+
+{% block pagination %}
+  {% include 'main/inc/_pagination.html' %}
+{% endblock %}
+
+{% block footer %}
+  {% include 'main/inc/_footer.html' %}
+{% endblock %}
